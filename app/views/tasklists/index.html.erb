@@ -1,0 +1,16 @@
+<table>
+	<tr>
+		<td >title</td>
+		<td >user</td>
+	</tr>
+<% @task_lists.each do |task_list| %>
+	<tr>
+
+		<td><%= task_list.title %></td>
+		<td><%= task_list.user.name %></td>
+		<td><%= link_to "show list", tasklist_path(task_list.id) %> </td>
+		<td><%= link_to "edit list", edit_tasklist_path(task_list.id) %> </td>
+		<td><%= link_to "destroy list", task_list, confirm: "you sure you want to do this?", method: :delete %> </td>
+	</tr>
+<% end %>
+</table>
