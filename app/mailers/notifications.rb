@@ -1,5 +1,5 @@
 class Notifications < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "tasklists@example.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -7,7 +7,7 @@ class Notifications < ActionMailer::Base
   #   en.notifications.new_tasklist.subject
   #
   def new_tasklist(tasklist)
-    @greeting = "Hi"
+    @greeting = "Why hello there!"
     @id = tasklist.id
 
     mail to: tasklist.user.email
